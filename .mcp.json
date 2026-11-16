@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "inngest-cloud": {
+      "type": "http",
+      "url": "https://api.inngest.com/mcp"
+    }
+  }
+}

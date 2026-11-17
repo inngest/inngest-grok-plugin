@@ -14,11 +14,12 @@ that server support.
 Install the plugin from this repository:
 
 ```sh
-grok plugin install inngest/inngest-grok-plugin
+grok plugin install inngest/inngest-grok-plugin --trust
 ```
 
-Review and trust the plugin when prompted to enable its MCP server. Connect your
-Inngest account through the host's OAuth flow when that connection is available.
+`--trust` confirms you have reviewed the plugin. Without it, Grok shows the
+source and stops without installing. To connect your Inngest account, open
+`/mcps`, select `inngest-cloud`, and press `i` to sign in.
 
 To validate a local checkout:
 
@@ -29,8 +30,8 @@ grok plugin validate .
 ## Cursor
 
 In Cursor's Customize view, use **Import from Disk** and select a checkout of this
-repository. Cursor supports the root Agent Plugins manifest, skills, and
-`mcp.json`. Enable the Inngest MCP server and complete sign-in when prompted.
+repository. Cursor loads the manifest, the skills, and the Inngest MCP server.
+Enable the server and complete sign-in when prompted.
 
 ## Grok and Grok Bot
 
@@ -62,12 +63,23 @@ local Dev Server. For local development, add a separate MCP connection at
 ## Package layout
 
 - `plugin.json`: portable Agent Plugins manifest for skills and MCP.
-- `mcp.json`: portable Streamable HTTP connection, including Cursor.
+- `.cursor-plugin/plugin.json`: Cursor manifest. It adds the logo, and the xAI
+  marketplace reads the plugin version from it.
+- `mcp.json`: portable Streamable HTTP connection.
 - `.mcp.json`: equivalent HTTP connection for Grok Build.
 - `skills/`: 15 Inngest skills and their reference material.
 - `examples/`: TypeScript examples.
 
-Both MCP files point to the same server; keep them in sync. The initial skills
+Keep these in sync when they change:
+
+- The server URL in `mcp.json`, `.mcp.json`, and `.cursor-plugin/plugin.json`.
+- The name, version, and description in `plugin.json` and
+  `.cursor-plugin/plugin.json`.
+- `references/expressions.md` inside `inngest-steps`, `inngest-events`, and
+  `inngest-durable-functions`. Each skill carries its own copy so it stays
+  self-contained.
+
+The initial skills
 and assets were copied from
 [inngest-codex-plugin](https://github.com/inngest/inngest-codex-plugin/tree/c6fb94699c9ead893170cc510721fdcf3471460a/plugins/inngest)
 (version 0.4.3). This package has its own release version.

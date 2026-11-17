@@ -26,7 +26,10 @@ Official references:
 ## Copyable Example
 
 When starting a durable support or tool-calling agent from scratch, inspect the
-companion example at `../../examples/durable-agent`. It shows the expected
+companion example in this plugin's `examples/durable-agent` directory. If the
+host installed this skill without the rest of the plugin, read it at
+https://github.com/inngest/inngest-grok-plugin/tree/main/examples/durable-agent
+instead. It shows the expected
 agent-first shape: quick HTTP trigger, typed events, AgentKit inside an
 Inngest function, step-scoped context loading, human approval with
 `step.waitForEvent`, and durable side effects after approval.

@@ -191,7 +191,7 @@ For partners managing sub-accounts only.
 
 ## Insights
 
-> Newer than the published OpenAPI spec; documented from the CLI. See [cli-commands.md](../../inngest-api-cli/references/cli-commands.md#insights-sql-over-execution-data).
+> Newer than the published OpenAPI spec; documented from the CLI. See the "Insights: SQL over execution data" section of the `inngest-api-cli` skill's command reference.
 
 | Endpoint | Purpose |
 |----------|---------|

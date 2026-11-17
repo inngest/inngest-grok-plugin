@@ -375,4 +375,4 @@ inngest start --event-key <key> --signing-key <key>
 | Webhook events not reaching Dev Server | No tunnel configured | Use ngrok or localtunnel for external webhook sources |
 | "Unattached sync" in dashboard | Auto-sync failed silently | Check integration logs; resync manually |
 
-See [inngest-setup](../inngest-setup/SKILL.md) for SDK installation and [inngest-durable-functions](../inngest-durable-functions/SKILL.md) for function configuration.
+See the `inngest-setup` skill for SDK installation and the `inngest-durable-functions` skill for function configuration.

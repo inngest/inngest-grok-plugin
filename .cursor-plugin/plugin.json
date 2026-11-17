@@ -1,0 +1,26 @@
+{
+  "name": "inngest",
+  "version": "0.1.0",
+  "description": "Build durable workflows and inspect Inngest Cloud apps, functions, events, runs, and traces through OAuth MCP.",
+  "author": {
+    "name": "Inngest, Inc.",
+    "email": "hello@inngest.com"
+  },
+  "homepage": "https://www.inngest.com/docs",
+  "repository": "https://github.com/inngest/inngest-grok-plugin",
+  "license": "MIT",
+  "keywords": [
+    "inngest",
+    "durable-functions",
+    "background-jobs",
+    "agent-evals",
+    "workflow",
+    "mcp"
+  ],
+  "logo": "assets/inngest-mark.svg",
+  "mcpServers": {
+    "inngest-cloud": {
+      "url": "https://api.inngest.com/mcp"
+    }
+  }
+}

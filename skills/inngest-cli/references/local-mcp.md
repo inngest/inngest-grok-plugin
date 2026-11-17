@@ -25,6 +25,42 @@ investigating a Cloud run does not opt the user into local MCP.
    function. Tool names depend on the Dev Server version. Do not send an event
    or invoke a function just to verify connectivity.
 
+### Cursor
+
+For a project-only connection, merge this entry into `.cursor/mcp.json` in the
+user's application directory, preserving existing servers. Use
+`~/.cursor/mcp.json` instead if the user wants it in every project. Don't
+commit a personal port choice unless it is intended to be shared by the project.
+
+```json
+{
+  "mcpServers": {
+    "inngest-dev": {
+      "url": "http://127.0.0.1:8288/mcp"
+    }
+  }
+}
+```
+
+Cursor picks up the change without a restart. To remove this opt-in connection,
+delete the `inngest-dev` entry.
+
+### Grok Build
+
+Add the connection for the current user:
+
+```bash
+grok mcp add inngest-dev http://127.0.0.1:8288/mcp
+```
+
+Add `--scope project` to write it to `./.grok/config.toml` instead, which is
+shared with everyone working in that directory. In an open session, press `r`
+in `/mcps` to refresh the server list. To remove this opt-in connection:
+
+```bash
+grok mcp remove inngest-dev
+```
+
 ### Claude Code
 
 Run from the user's application directory. `--scope local` keeps this connection
